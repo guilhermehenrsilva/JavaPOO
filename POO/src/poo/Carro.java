@@ -1,33 +1,32 @@
 
 package poo;
 
+// Definição da classe Carro (Abstração)
+class Carro {
+    private String marca;     // Atributo encapsulado (Encapsulamento)
+    private String modelo;    // Atributo encapsulado (Encapsulamento)
+    private int ano;          // Atributo encapsulado (Encapsulamento)
+    private String cor;       // Atributo encapsulado (Encapsulamento)
+    int velocidade;   // Atributo encapsulado (Encapsulamento)
 
-public class Carro {
-    public String Modelo;
-    public String Cor;
-    public Boolean parado;
-    
-    public void status (){
-        
-        System.out.println("Modelo? " + this.Modelo);
-        System.out.println("Cor? " + this.Cor);
-        System.out.println("Carro está parado? " + this.parado);
-        
+    public Carro(String marca, String modelo, int ano, String cor) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+        this.cor = cor;
+        this.velocidade = 0;
     }
-    
-    public void andar (){
-        if(this.parado == true) {
-            System.out.println("Não é possivel andar!");
-        } else {
-            System.out.println("Estamos Andando");
-        }
+
+    public void acelerar(int quantidade) {
+        this.velocidade += quantidade;
     }
-    
-    public void freiar(){
-        this.parado = false;
+
+    public void frear(int quantidade) {
+        this.velocidade -= quantidade;
     }
-    
-    public void parar(){
-        this.parado = false;
+
+    public int obterVelocidade() {
+        return this.velocidade;
     }
-}    
+}
+
